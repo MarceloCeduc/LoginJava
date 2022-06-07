@@ -44,6 +44,12 @@ public class Access extends javax.swing.JFrame {
 
         lblPassword.setText("Clave");
 
+        txtUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUserActionPerformed(evt);
+            }
+        });
+
         btnAccept.setText("Aceptar");
         btnAccept.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,10 +107,15 @@ public class Access extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAcceptActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAcceptActionPerformed
+        String realUserName = "MarceloCeduc";
+        String realPassword = "ceduc123";
         String userName = this.txtUser.getText();
         String userPass = String.valueOf(this.txtPassword.getPassword());
-        System.out.println(userName);
-        System.out.println(userPass);
+        if(userName.equals(realUserName) && userPass.equals(realPassword)){
+            JOptionPane.showMessageDialog(this, "BIenvenido a su cuenta", "ACCESO", JOptionPane.INFORMATION_MESSAGE);
+        }else{
+            JOptionPane.showMessageDialog(this, "Nombre de ususario/clave INCORRECTA", "ACCESO", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnAcceptActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
@@ -113,6 +124,10 @@ public class Access extends javax.swing.JFrame {
             System.exit(0);
         }
     }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void txtUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUserActionPerformed
+         
+    }//GEN-LAST:event_txtUserActionPerformed
 
     /**
      * @param args the command line arguments
